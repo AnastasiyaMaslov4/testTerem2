@@ -21,8 +21,15 @@ body {
 }
 
 .second-section {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+}
+
+.second-section__block {
+    flex: 1 1 0px;
+}
+
+.first-block {
+    order: -1;
 }
 
 .blue-color {

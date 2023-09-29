@@ -11,15 +11,15 @@ sampleForm.addEventListener('submit', e => {
   let json = JSON.stringify(object);
   dataDiv.innerHTML = `${json}`;
 
-    const requestURL = `./?num1=${object.num1}&num2=${object.num2}&num3=${object.num3}&num4=${object.num4}&num5=${object.num5}&text1=${object.text1}&text2=${object.text2}`;
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', requestURL);
-    xhr.onload = function () {
-      if (xhr.status !== 200) {
-        console.log(xhr.responseText);
-        return;
-      }
-      alert('Данные отправлены!')
+  const params = new URLSearchParams(formData.entries()).toString();
+  const url = '/?' + params;
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', url);
+  xhr.onload = function () {
+    if (xhr.status !== 200) {
+      return;
     }
-    xhr.send();
+    alert('Данные отправлены!')
+  }
+  xhr.send();
 })

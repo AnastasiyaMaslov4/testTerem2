@@ -2,7 +2,7 @@ const modalWindow = document.querySelector('.modal-window');
 const closeBtn = document.querySelector('.modal-window__close');
 const overlay = document.querySelector('.overlay');
 const titleBlock = document.querySelector('.first-section');
-const secondSection = document.querySelector('.second-section');
+const secondBlock = document.querySelector('.block-swipe');
 
 
 function closeModal() {
@@ -15,7 +15,6 @@ function hideTitle() {
 }
 
 function swipeBlocks() {
-    let blocks = document.querySelectorAll('.block-swipe');
-    secondSection.insertBefore(blocks[1], blocks[0]);
-};
+    secondBlock.classList.toggle('first-block');
+}
 
